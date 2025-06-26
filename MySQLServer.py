@@ -14,8 +14,9 @@ try:
         # Create database if it doesn't exist
         cur.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully!")
-except Error as err:
-    mysql.connector.Error
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
+
 finally:
     # Close connection if open
     if 'mydb' in locals() and mydb.is_connected():
